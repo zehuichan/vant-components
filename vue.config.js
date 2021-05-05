@@ -1,12 +1,24 @@
 'use strict'
+const path = require('path')
+const isProd = process.env.NODE_ENV === 'production'
+
+function resolve(dir) {
+  return path.join(__dirname, dir)
+}
 
 module.exports = {
-  // 修改 examples 为 examples
-  pages: {
-    index: {
-      entry: 'examples/main.js',
-      template: 'public/index.html',
-      filename: 'index.html'
+  publicPath: isProd ? './' : '/',
+  outputDir: 'docs',
+  configureWebpack: {
+    entry: './examples/main.js',
+    output: {
+      libraryExport: 'default'
+    },
+    resolve: {
+      alias: {
+        'examples': resolve('examples'),
+        'lib': resolve('lib'),
+      }
     }
   },
   css: {

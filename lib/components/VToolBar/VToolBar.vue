@@ -13,7 +13,7 @@
 </script>
 
 <style lang="less" scoped>
-  @import "../style/safe-area.less";
+  @import "../../style/safe-area.less";
 
   .v-tool-bar__placeholder {
     height: 44px;

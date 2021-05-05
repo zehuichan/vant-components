@@ -6,8 +6,9 @@
   "scripts": {
     "start": "npm run serve",
     "serve": "vue-cli-service serve",
-    "build:doc": "vue-cli-service build",
-    "build:lib": "vue-cli-service build --target lib --name VantComponents --dest lib packages/index.js",
+    "build:docs": "vue-cli-service build",
+    "build:lib": "vue-cli-service build --target lib --name VantComponents --dest ./dist/ ./lib/index.js",
+    "build": "npm run build:lib && npm run build:docs",
     "publish ": "npm publish",
     "unpublish ": "npm unpublish --force",
     "release": "release-it && git push --follow-tags origin main"
@@ -18,19 +19,19 @@
     "url": "git@github.com:zehuichan/vant-components.git"
   },
   "dependencies": {
-    "@vant/touch-emulator": "^1.2.0",
-    "core-js": "^3.6.5",
-    "vant": "^2.12.14",
-    "vue": "^2.6.11",
-    "vue-router": "^3.5.1"
+    "core-js": "^3.6.5"
   },
   "devDependencies": {
+    "@vant/touch-emulator": "^1.2.0",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "less": "^3.13.1",
     "less-loader": "^7.3.0",
     "release-it": "^14.6.1",
-    "vue-template-compiler": "^2.6.11"
+    "vant": "^2.12.16",
+    "vue": "^2.6.12",
+    "vue-router": "^3.5.1",
+    "vue-template-compiler": "^2.6.12"
   },
   "release-it": {
     "npm": {

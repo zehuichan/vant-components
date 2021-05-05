@@ -21,7 +21,7 @@
 
 <script>
   // utils
-  import parseTime from '../utils/parse-time'
+  import parseTime from '../../utils/parse-time'
 
   export default {
     name: 'VDatetimePicker',
