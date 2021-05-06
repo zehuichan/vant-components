@@ -21,5 +21,6 @@ console.log('Vue', Vue.version)
 console.log('Vant', Vant.version)
 
 new Vue({
+  router,
   render: h => h(App),
 }).$mount('#app')

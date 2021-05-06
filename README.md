@@ -1,18 +1,18 @@
-# @vcomponetns/element-ui
+# @vcomponetns/Vant-ui
 
 ## 前置条件
 ```js
 import Vue from 'vue'
 
-import Element from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
+import Vant from 'vant'
+import 'vant/lib/index.css'
 
-Vue.use(Element)
+Vue.use(Vant)
 ```
 
 ### 安装
 ```sh
-npm i element-components -S
+npm i vant-components -S
 ```
 
 ### 引入组件
