@@ -19,6 +19,7 @@ Vue.use(VComponents)
 Vue.config.productionTip = false
 console.log('Vue', Vue.version)
 console.log('Vant', Vant.version)
+console.log('VComponents', VComponents.version)
 
 new Vue({
   router,
