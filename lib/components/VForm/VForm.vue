@@ -47,8 +47,8 @@
         }
       },
       options: {
-        type: Array,
-        default: () => [],
+        type: Object,
+        default: () => ({}),
         required: true
       },
     },
@@ -60,6 +60,6 @@
   }
 </script>
 
-<style lang="less" scoped>
+<style>
 
 </style>

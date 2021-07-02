@@ -19,6 +19,9 @@
     "url": "git@github.com:zehuichan/vant-components.git"
   },
   "dependencies": {},
+  "peerDependencies": {
+    "vue": "^2.6.14"
+  },
   "devDependencies": {
     "@vant/markdown-loader": "^2.5.0",
     "@vant/touch-emulator": "^1.3.0",

@@ -31,8 +31,7 @@
   }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="less" scoped>
+<style lang="less">
   .v-card {
     border-radius: 2px;
     border: 1px solid #ebeef5;
@@ -60,8 +59,11 @@
   }
 
   .v-card__header {
+    display: flex;
+    justify-content: space-between;
     padding: 11px 16px;
     box-sizing: border-box;
+    font-size: 14px;
   }
 
   .v-card__body {

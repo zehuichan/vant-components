@@ -13,7 +13,7 @@
       <van-picker
         ref="picker"
         show-toolbar
-        :columns="columns"
+        :columns="_options"
         @cancel="onCancel"
         @confirm="onConfirm"
       />
@@ -32,21 +32,33 @@
       value: [String, Number],
       columns: {
         type: Array,
-        default: () => []
+        default: () => [],
+        required: true
+      },
+      prop: {
+        type: Object,
+        default: () => ({ label: 'label', value: 'value' })
       }
     },
     computed: {
+      _options() {
+        return Array.from(this.columns).map((item) => ({
+          text: item[this.prop.label],
+          value: item[this.prop.value],
+          ...item
+        }))
+      },
       showIcon() {
         return this.$attrs.clearable && this.value ? 'clear' : 'arrow'
       },
       text() {
-        const curr = Array.from(this.columns).find(v => v.value === +this.value)
+        const curr = Array.from(this._options).find(item => item.value === this.value)
         return curr?.text
       },
       index() {
-        for (let i = 0; i < this.columns.length; i++) {
-          const item = this.columns[i]
-          if (item.value === +this.value) {
+        for (let i = 0; i < this._options.length; i++) {
+          const item = this._options[i]
+          if (item.value === this.value) {
             return i
           }
         }
@@ -74,7 +86,6 @@
         this.show = false
       },
       onConfirm(value, index) {
-        console.log(value)
         this.show = false
         this.$emit('input', value.value, index)
         this.$emit('change', value.value, index)
@@ -91,7 +102,7 @@
 
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="less" scoped>
+<style lang="less">
   .v-picker.van-cell {
     padding: 0;
 

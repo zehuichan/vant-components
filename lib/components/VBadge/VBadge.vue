@@ -18,7 +18,7 @@
   }
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
   .v-badge {
     box-sizing: border-box;
     margin: 0;
