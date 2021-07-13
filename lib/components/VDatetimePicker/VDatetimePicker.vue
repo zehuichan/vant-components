@@ -1,28 +1,25 @@
 <template>
   <div class="v-datetime-picker van-cell">
     <van-field
-        v-bind="$attrs"
-        :value="text"
-        readonly
-        clickable
-        @click-input="onClick"
-        @click-right-icon="onClear"
+      v-bind="$attrs"
+      :value="text"
+      readonly
+      clickable
+      @click-input="onClick"
+      @click-right-icon="onClear"
     />
     <van-popup v-model="show" position="bottom" get-container="body">
       <van-datetime-picker
-          v-model="date"
-          :type="type"
-          @confirm="onConfirm"
-          @cancel="onCancel"
+        v-model="date"
+        :type="type"
+        @confirm="onConfirm"
+        @cancel="onCancel"
       />
     </van-popup>
   </div>
 </template>
 
 <script>
-// utils
-import { formatDayJs } from '@/utils'
-
 export default {
   name: 'VDatetimePicker',
   model: {
@@ -40,7 +37,7 @@ export default {
   computed: {
     text() {
       if (this.value) {
-        return formatDayJs(this.value, this.valueFormat)
+        return this.$D(this.value).format(this.valueFormat)
       }
       return null
     }
