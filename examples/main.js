@@ -26,6 +26,11 @@ Vue.use(hljs.vuePlugin)
 Vue.use(VComponents)
 Vue.use(DemoComponents)
 
+// register global utility filters
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key])
+})
+
 Vue.config.productionTip = false
 console.log('Vue', Vue.version)
 console.log('Vant', Vant.version)

@@ -1,6 +1,34 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+const { nav } = require('examples/config')
+
+const loadView = function () {
+  return treeToList(nav, 'items').map(item => ({
+    path: '/' + item.path,
+    component: () => import(`examples/views/${item.path}`),
+    name: item.path,
+    meta: {
+      title: item.title
+    }
+  }))
+}
+
+const treeToList = function (data, children = 'children') {
+  let tmp = []
+  data.forEach(item => {
+    tmp.push(item)
+    if (item[children] && item[children].length > 0) {
+      const res = treeToList(item[children], children)
+      tmp = tmp.concat(res)
+    } else {
+      // 删掉不存在 children 值的属性
+      delete item[children]
+    }
+  })
+  return tmp
+}
+
 Vue.use(Router)
 
 /* Layout */
@@ -16,46 +44,12 @@ export const constantRoutes = [
   {
     path: '',
     component: Layout,
-    children: [
-      {
-        path: '/home',
-        component: () => import('examples/views/home'),
-        name: 'home'
-      },
-      {
-        path: '/quickstart',
-        component: () => import('examples/views/quickstart'),
-        name: 'quickstart'
-      },
-      // 业务组件
-      // 表单组件
-      {
-        path: '/vform',
-        component: () => import('examples/views/vform'),
-        name: 'vform'
-      },
-      // 展示组件
-      {
-        path: '/vbadge',
-        component: () => import('examples/views/vbadge'),
-        name: 'vbadge'
-      },
-    ]
+    children: loadView()
   }
 ]
 
-const createRouter = () => new Router({
+export default new Router({
   // mode: 'history', // require service support
   scrollBehavior: () => ({ y: 0 }),
   routes: constantRoutes
 })
-
-const router = createRouter()
-
-// Detail see: https://github.com/vuejs/vue-router/issues/1234#issuecomment-357941465
-export function resetRouter() {
-  const newRouter = createRouter()
-  router.matcher = newRouter.matcher // reset router
-}
-
-export default router

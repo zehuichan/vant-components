@@ -8,10 +8,6 @@ module.exports = {
       ]
     },
     {
-      title: '业务组件',
-      items: []
-    },
-    {
       title: '表单组件',
       items: [
         { path: 'vform', title: 'v-form' },

@@ -18,7 +18,9 @@
     "type": "git",
     "url": "git@github.com:zehuichan/vant-components.git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "dayjs": "^1.10.6"
+  },
   "peerDependencies": {
     "vue": "^2.6.14"
   },
@@ -28,10 +30,11 @@
     "@vue/cli-plugin-babel": "^4.5.13",
     "@vue/cli-service": "^4.5.13",
     "core-js": "^3.15.1",
+    "highlight.js": "^10.7.3",
     "less": "^3.13.1",
     "less-loader": "^7.3.0",
     "release-it": "^14.10.0",
-    "vant": "^2.12.22",
+    "vant": "^2.12.24",
     "vue": "^2.6.14",
     "vue-router": "^3.5.2",
     "vue-template-compiler": "^2.6.14"
