@@ -18,10 +18,12 @@
     "type": "git",
     "url": "git@github.com:zehuichan/vant-components.git"
   },
+  "homepage": "https://zehuichan.gitee.io/vant-components/#/home",
   "dependencies": {
     "dayjs": "^1.10.6"
   },
   "peerDependencies": {
+    "vant": "^2.12.24",
     "vue": "^2.6.14"
   },
   "devDependencies": {
