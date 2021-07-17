@@ -8,7 +8,7 @@ function resolve(dir) {
 
 module.exports = {
   publicPath: isProd ? './' : '/',
-  outputDir: 'docs/vant',
+  outputDir: 'docs',
   configureWebpack: {
     entry: './examples/main.js',
     output: {
