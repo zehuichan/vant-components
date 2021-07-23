@@ -1,0 +1,35 @@
+.v-card {
+  border-radius: 2px;
+  background-color: #fff;
+  overflow: hidden;
+  color: #303133;
+  transition: .3s;
+  font-size: 12px;
+
+  &.is-always-shadow {
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+  }
+
+  &.is-never-shadow {
+
+  }
+}
+
+.v-card__header {
+  padding: 8px 16px;
+  box-sizing: border-box;
+}
+
+.v-card__body {
+  padding: 16px;
+}
+
+.v-card__extra,
+.v-card__footer {
+  font-size: 12px;
+  padding: 12px 16px;
+
+  .van-button + .van-button {
+    margin-left: 8px;
+  }
+}
