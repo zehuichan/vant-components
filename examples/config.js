@@ -17,6 +17,7 @@ module.exports = {
       title: '展示组件',
       items: [
         { path: 'vcard', title: 'v-card' },
+        { path: 'vprice', title: 'v-price' },
         { path: 'vbadge', title: 'v-badge' },
       ]
     }

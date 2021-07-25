@@ -22,12 +22,9 @@
     </demo-card>
     <demo-card title="仿订单卡片。">
       <v-card shadow="never" class="box-card">
-        <div v-for="o in 4" :key="o" class="text item">
-          {{ '列表内容 ' + o }}
+        <div>
+          <van-image src="https://img01.yzcdn.cn/vant/ipad.jpeg"/>
         </div>
-        <template #extra>
-          123
-        </template>
         <div slot="footer" class="text-right">
           <van-button plain size="small">延长收货</van-button>
           <van-button plain size="small">查看物流</van-button>
