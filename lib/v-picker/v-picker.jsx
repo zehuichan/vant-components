@@ -74,6 +74,11 @@ const VPicker = {
         this.$picker.setIndexes([this.index])
       })
     }
+  },
+  render() {
+    return (
+      <div>23</div>
+    )
   }
 }
 
