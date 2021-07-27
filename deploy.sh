@@ -7,13 +7,13 @@ set -e
 npm run build:docs
 
 # 进入生成的构建文件夹
-cd ./docs
+cd docs
 
 git init
 git add -A
 git commit -m 'deploy'
 
 # 如果你想要部署到 https://<USERNAME>.github.io
-git push -f https://github.com/zehuichan/vant-components.git gh-pages
+git push -f https://github.com/zehuichan/vant-components.git master:gh-pages
 
 cd -
