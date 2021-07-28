@@ -1,6 +1,5 @@
 'use strict'
 const path = require('path')
-const isProd = process.env.NODE_ENV === 'production'
 const isGithub = process.env.VUE_APP_BASE_URL === 'github'
 
 function resolve(dir) {
@@ -8,7 +7,7 @@ function resolve(dir) {
 }
 
 module.exports = {
-  publicPath: isProd ? isGithub ? '/vant-components/' : './' : '/',
+  publicPath: isGithub ? '/vant-components/' : './',
   outputDir: 'docs',
   configureWebpack: {
     entry: './examples/main.js',

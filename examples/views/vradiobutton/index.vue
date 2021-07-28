@@ -1,7 +1,13 @@
 <template>
   <demo-wrapper title="VRadioButton 单选按钮组">
-    <demo-card title="基本用法">
-      <v-radio-button label="选择" v-model="value" :options="options"/>
+    <demo-card title="basic">
+      <v-radio-button label="关键城市" v-model="value" :options="options"/>
+    </demo-card>
+    <demo-card title="color">
+      <v-radio-button label="关键城市" v-model="value" :options="options" color="danger"/>
+    </demo-card>
+    <demo-card title="disabled">
+      <v-radio-button label="关键城市" v-model="value" :options="options" disabled/>
     </demo-card>
     <README/>
   </demo-wrapper>
@@ -14,11 +20,12 @@ export default {
   name: 'vradiobutton',
   data() {
     return {
-      value: 3,
+      value: 1,
       options: [
         { label: '上海', value: 1 },
         { label: '北京', value: 2, disabled: true },
         { label: '广州', value: 3 },
+        { label: '深圳', value: 4 },
       ]
     }
   },

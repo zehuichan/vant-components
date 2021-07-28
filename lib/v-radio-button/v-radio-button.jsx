@@ -11,7 +11,11 @@ const VRadioButton = {
       default: () => [],
       required: true
     },
-    label: String,
+    label: [String, Number],
+    color: {
+      type: String,
+      default: 'primary' // primary、info、warning、danger
+    },
     disabled: {
       type: Boolean,
       default: false
@@ -35,7 +39,7 @@ const VRadioButton = {
       this.$emit('input', item.value, index)
     },
     active(item, index) {
-      return item.value === this.value ? 'primary' : 'default'
+      return item.value === this.value ? this.color  : 'default'
     }
   },
   render() {
