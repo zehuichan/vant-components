@@ -1,5 +1,7 @@
 # @vcomponetns/Vant-ui
 
+[github pages](https://zehuichan.github.io/vant-components/)
+
 ## 前置条件
 ```js
 import Vue from 'vue'
@@ -13,6 +15,8 @@ Vue.use(Vant)
 ### 安装
 ```sh
 npm i vant-components -S
+#or
+yarn add element-components
 ```
 
 ### 引入组件
