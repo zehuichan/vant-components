@@ -11,6 +11,7 @@ module.exports = {
       title: '表单组件',
       items: [
         { path: 'vform', title: 'v-form' },
+        { path: 'vradiobutton', title: 'v-radio-button' },
       ]
     },
     {
