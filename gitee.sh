@@ -4,7 +4,7 @@
 set -e
 
 # 构建
-npm run build:docs
+npm run build:gitee
 
 # 进入生成的构建文件夹
 cd docs
@@ -14,6 +14,6 @@ git add -A
 git commit -m 'deploy'
 
 # 如果你想要部署到 https://<USERNAME>.github.io
-git push https://gitee.com/zehuichan/vcomponents.git master
+git push -f https://gitee.com/zehuichan/vant-components.git master
 
 cd -
