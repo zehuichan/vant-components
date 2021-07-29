@@ -11,7 +11,6 @@ const VRadioButton = {
       default: () => [],
       required: true
     },
-    label: [String, Number],
     color: {
       type: String,
       default: 'primary' // primary、info、warning、danger
@@ -39,27 +38,41 @@ const VRadioButton = {
       this.$emit('input', item.value, index)
     },
     active(item, index) {
-      return item.value === this.value ? this.color  : 'default'
+      return item.value === this.value ? this.color : 'default'
     }
   },
   render() {
+    const data = {
+      props: {
+        ...this.$attrs,
+      },
+      on: {
+        ...this.$listeners,
+      },
+    }
     return (
-      <van-cell title={this.label} center>
-        {
-          this._options.map((item, index) => {
-            return (
-              <van-button
-                type={this.active(item, index)}
-                size="mini"
-                disabled={this.disabled || item.disabled}
-                onClick={() => this.onClick(item, index)}
-              >
-                {item.label}
-              </van-button>
-            )
-          })
-        }
-      </van-cell>
+      <van-field
+        {...data}
+        input-align="right"
+        center
+      >
+        <template slot="input">
+          {
+            this._options.map((item, index) => {
+              return (
+                <van-button
+                  type={this.active(item, index)}
+                  size="mini"
+                  disabled={this.disabled || item.disabled}
+                  onClick={() => this.onClick(item, index)}
+                >
+                  {item.label}
+                </van-button>
+              )
+            })
+          }
+        </template>
+      </van-field>
     )
   }
 }
