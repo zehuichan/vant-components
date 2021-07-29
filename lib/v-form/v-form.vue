@@ -1,63 +1,70 @@
 <template>
-  <van-form v-bind="$attrs" v-on="$listeners">
-    <template v-for="item in options">
-      <van-field
-        v-if="item.key === 'switch'"
-        :label="item.label"
-        :rules="item.rules"
-      >
-        <template #input>
-          <van-switch :value="value[item.key]" :size="item.size || 20" @input="$_inputChange(item, $event)"/>
+  <van-form class="v-form" ref="form" validate-first>
+    <slot/>
+    <template v-if="group">
+      <van-cell-group v-for="group in options" :title="group.title" :border="group.border">
+        <template v-for="item in group.options">
+          <v-field
+            v-if="['field','tel','bankCard','money'].includes(item.type)"
+            :label="item.label"
+            :placeholder="item.placeholder"
+            :type="item.type"
+            :name="item.key"
+            :required="item.required"
+            :rules="item.rules"
+            :value="value[item.key]"
+            @input="$_inputChange(item, $event)"
+          />
+          <slot :scope="item" :name="item.key"/>
         </template>
-      </van-field>
-      <van-field
-        v-if="item.key === 'checkbox'"
-        :label="item.label"
-        :rules="item.rules"
-      >
-        <template #input>
-          <van-checkbox-group :value="value[item.key]" direction="horizontal" @input="$_inputChange(item, $event)">
-            <van-checkbox
-              v-for="(sub, idx) in item.options"
-              :key="idx"
-              :name="sub.value"
-              shape="square"
-            >
-              {{ sub.label }}
-            </van-checkbox>
-          </van-checkbox-group>
-        </template>
-      </van-field>
+      </van-cell-group>
+    </template>
+    <template v-else>
+      <template v-for="item in options">
+        <slot :scope="item" :name="item.key"/>
+      </template>
     </template>
   </van-form>
 </template>
 
 <script>
-  export default {
-    name: 'VForm',
-    model: {
-      prop: 'value',
-      event: 'input'
-    },
-    props: {
-      value: {
-        type: Object,
-        default: () => {
-          return {}
-        }
-      },
-      options: {
-        type: Object,
-        default: () => ({}),
-        required: true
-      },
-    },
-    methods: {
-      $_inputChange({ type, key }, event) {
-        this.$emit('input', { ...this.value, [key]: event })
+export default {
+  name: 'VForm',
+  model: {
+    prop: 'value',
+    event: 'input'
+  },
+  props: {
+    value: {
+      type: Object,
+      default: () => {
+        return {}
       }
-    }
+    },
+    options: {
+      type: Array,
+      default: () => [],
+      required: true
+    },
+    group: {
+      type: Boolean,
+      default: false
+    },
+  },
+  methods: {
+    $_inputChange({ key }, event) {
+      this.$emit('input', { ...this.value, [key]: event })
+      this.$emit('change', { ...this.value, [key]: event })
+    },
+    // v-form api
+    validate(name) {
+      return this.$refs.form.validate(name)
+    },
+    resetValidation(name) {
+      return this.$refs.form.resetValidation(name)
+    },
   }
+}
 </script>
 
 <style>
