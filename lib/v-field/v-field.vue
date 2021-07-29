@@ -16,8 +16,7 @@
 </template>
 
 <script>
-// utils
-import { $_formatValue } from 'lib/utils/formate-value'
+import { $_formatValue } from '../utils/formate-value'
 
 export default {
   name: 'VField',
@@ -53,7 +52,7 @@ export default {
       this.$emit('input', val)
     },
     formatter(n) {
-      let o = this.value
+      let o = this.value || ''
       if (this.$attrs.type === 'tel') {
         return $_formatValue(n, o, 'phone').value
       }
