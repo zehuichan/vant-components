@@ -1,21 +1,3 @@
-<template>
-  <van-field
-    v-bind="$attrs"
-    v-on="$listeners"
-    :value="value"
-    :type="type"
-    :right-icon="rightIcon"
-    :formatter="formatter"
-    @input="$_inputChange"
-    @click-right-icon="$_clickRightIcon"
-  >
-    <template v-for="(val, name) of $slots" v-slot:[name]>
-      <slot :name="name"/>
-    </template>
-  </van-field>
-</template>
-
-<script>
 import { $_formatValue } from '../utils/formate-value'
 
 export default {
@@ -34,7 +16,7 @@ export default {
     }
   },
   computed: {
-    type() {
+    _type() {
       return this.show ? 'password' : this.$attrs.type
     },
     rightIcon() {
@@ -64,6 +46,29 @@ export default {
       }
       return n
     }
+  },
+  render() {
+    const data = {
+      attrs: {
+        ...this.$attrs
+      },
+      on: {
+        ...this.$listeners,
+        input: this.$_inputChange,
+        'click-right-icon': this.$_clickRightIcon
+      }
+    }
+    return (
+      <van-field
+        {...data}
+        value={this.value}
+        type={this._type}
+        right-icon={this.rightIcon}
+        formatter={this.formatter}
+      >
+
+        {Object.keys(this.$slots).map(key => <template slot={key}>{this.$scopedSlots[key]()}</template>)}
+      </van-field>
+    )
   }
 }
-</script>

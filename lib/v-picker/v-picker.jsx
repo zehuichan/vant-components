@@ -1,6 +1,6 @@
 import './index.less'
 
-const VPicker = {
+export default {
   name: 'VPicker',
   model: {
     prop: 'value',
@@ -76,10 +76,12 @@ const VPicker = {
     }
   },
   render() {
+    const data = {
+      attrs: { ...this.$attrs },
+      on: { ...this.$listeners }
+    }
     return (
       <div>23</div>
     )
   }
 }
-
-export default VPicker

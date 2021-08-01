@@ -1,6 +1,6 @@
 import './index.less'
 
-const VCard = {
+export default {
   name: 'VCard',
   props: {
     header: String,
@@ -34,5 +34,3 @@ const VCard = {
     )
   }
 }
-
-export default VCard

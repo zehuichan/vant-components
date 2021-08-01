@@ -2,16 +2,10 @@
   <van-form class="v-form" ref="form" validate-first>
     <slot/>
     <template v-if="group">
-      <van-cell-group v-for="group in options" :title="group.title" :border="group.border">
+      <van-cell-group v-for="group in options" :key="group.title" :title="group.title" :border="group.border">
         <template v-for="item in group.options">
-          <v-field
-            v-if="['field','tel','bankCard','money'].includes(item.type)"
-            :label="item.label"
-            :placeholder="item.placeholder"
-            :type="item.type"
-            :name="item.key"
-            :required="item.required"
-            :rules="item.rules"
+          <v-form-item
+            :item="item"
             :value="value[item.key]"
             @input="$_inputChange(item, $event)"
           />

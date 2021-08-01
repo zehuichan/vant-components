@@ -10,8 +10,9 @@ module.exports = {
     {
       title: '表单组件',
       items: [
-        { path: 'vform', title: 'v-form' },
+        { path: 'vfield', title: 'v-field' },
         { path: 'vradiobutton', title: 'v-radio-button' },
+        { path: 'vform', title: 'v-form' },
       ]
     },
     {

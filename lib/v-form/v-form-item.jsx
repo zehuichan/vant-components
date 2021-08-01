@@ -1,12 +1,11 @@
-const VFormItem = {
+export default {
   name: 'VFormItem',
   props: {
     item: Object,
   },
   render() {
-    console.log(this.$attrs)
     const data = {
-      props: {
+      attrs: {
         ...this.$attrs,
       },
       on: {
@@ -14,14 +13,18 @@ const VFormItem = {
       },
     }
     return (
-      ['field', 'tel', 'password', 'digit', 'number', 'textarea'].includes(this.item.type)
+      ['field', 'tel', 'bankCard', 'money', 'password', 'digit', 'number', 'textarea'].includes(this.item.type)
         ? <v-field
           {...data}
+          vModel={this.$attrs.value}
+          label={this.item.label}
+          placeholder={this.item.placeholder}
+          type={this.item.type}
           name={this.item.key}
+          required={this.item.required}
+          rules={this.item.rules}
         />
         : null
     )
   },
 }
-
-export default VFormItem

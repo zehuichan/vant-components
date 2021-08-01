@@ -4,7 +4,7 @@ function checkPoint(price) {
   return String(price).indexOf('.') > 0
 }
 
-const VPrice = {
+export default {
   name: 'VPrice',
   props: {
     price: {
@@ -80,5 +80,3 @@ const VPrice = {
     )
   }
 }
-
-export default VPrice

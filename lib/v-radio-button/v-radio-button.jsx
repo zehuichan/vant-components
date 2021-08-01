@@ -1,10 +1,13 @@
-const VRadioButton = {
+import { Field } from 'vant'
+
+export default  {
   name: 'VRadioButton',
   model: {
     prop: 'value',
     event: 'input'
   },
   props: {
+    ...Field.props,
     value: [String, Number],
     options: {
       type: Array,
@@ -14,10 +17,6 @@ const VRadioButton = {
     color: {
       type: String,
       default: 'primary' // primary、info、warning、danger
-    },
-    disabled: {
-      type: Boolean,
-      default: false
     },
     prop: {
       type: Object,
@@ -31,7 +30,7 @@ const VRadioButton = {
         text: item[this.prop.label],
         value: item[this.prop.value],
       }))
-    },
+    }
   },
   methods: {
     onClick(item, index) {
@@ -43,18 +42,14 @@ const VRadioButton = {
   },
   render() {
     const data = {
-      props: {
-        ...this.$attrs,
-      },
-      on: {
-        ...this.$listeners,
-      },
+      attrs: { ...this.$attrs },
     }
     return (
       <van-field
         {...data}
+        value={this.value}
         input-align="right"
-        center
+        center={true}
       >
         <template slot="input">
           {
@@ -63,7 +58,7 @@ const VRadioButton = {
                 <van-button
                   type={this.active(item, index)}
                   size="mini"
-                  disabled={this.disabled || item.disabled}
+                  disabled={this.$props.disabled || this.$props.readonly || item.disabled}
                   onClick={() => this.onClick(item, index)}
                 >
                   {item.label}
@@ -77,5 +72,3 @@ const VRadioButton = {
   }
 }
 
-
-export default VRadioButton
