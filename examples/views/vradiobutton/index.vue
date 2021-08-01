@@ -1,13 +1,16 @@
 <template>
   <demo-wrapper title="VRadioButton 单选按钮组">
     <demo-card title="basic">
-      <v-radio-button label="关键城市" v-model="value" :options="options"/>
+      <v-radio-button label="关键城市" v-model="value" :options="options" input-align="right"/>
     </demo-card>
     <demo-card title="color">
       <v-radio-button label="关键城市" v-model="value" :options="options" color="danger"/>
     </demo-card>
     <demo-card title="disabled">
       <v-radio-button label="关键城市" v-model="value" :options="options" disabled/>
+    </demo-card>
+    <demo-card title="readonly">
+      <v-radio-button label="关键城市" v-model="value" :options="options" readonly/>
     </demo-card>
     <README/>
   </demo-wrapper>
