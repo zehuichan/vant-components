@@ -29,8 +29,6 @@ export default {
 
 | 参数   | 说明           | 类型      | 默认值 |
 | ------ | -------------- | --------- | ------ |
-| price | 价格数量    | _number \| string_    | `0` |
-| need-symbol   | 是否需要加上 symbol 符号 | _boolean_  | `true`    |
-| symbol   | 符号类型   | _string_  | `¥`    |
-| decimal-digits     | 小数位位数   | _number_  | `2`    |
-| thousands     | 是否按照千分号形式显示   | _boolean_  | `false`    |
+| v-model (value) | 绑定值 | _string \| number_  | _    |
+| type   | 输入框类型, 新增 tel \| bankCard \| money   | _string_  | `text`    |
+| show-password   |  增强型password, 设置后type自动置为password  | _boolean_ | `false`    |
