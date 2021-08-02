@@ -1,16 +1,16 @@
 <template>
   <demo-wrapper title="VRadioButton 单选按钮组">
     <demo-card title="basic">
-      <v-radio-button label="关键城市" v-model="value" :options="options" input-align="right"/>
+      <v-radio-button label="关键城市" v-model="value" :columns="columns" input-align="right"/>
     </demo-card>
     <demo-card title="color">
-      <v-radio-button label="关键城市" v-model="value" :options="options" color="danger"/>
+      <v-radio-button label="关键城市" v-model="value" :columns="columns" color="danger"/>
     </demo-card>
     <demo-card title="disabled">
-      <v-radio-button label="关键城市" v-model="value" :options="options" disabled/>
+      <v-radio-button label="关键城市" v-model="value" :columns="columns" disabled/>
     </demo-card>
     <demo-card title="readonly">
-      <v-radio-button label="关键城市" v-model="value" :options="options" readonly/>
+      <v-radio-button label="关键城市" v-model="value" :columns="columns" readonly/>
     </demo-card>
     <README/>
   </demo-wrapper>
@@ -24,7 +24,7 @@ export default {
   data() {
     return {
       value: 1,
-      options: [
+      columns: [
         { label: '上海', value: 1 },
         { label: '北京', value: 2, disabled: true },
         { label: '广州', value: 3 },

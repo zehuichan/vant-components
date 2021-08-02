@@ -1,15 +1,12 @@
-import { Field } from 'vant'
-
-export default  {
+export default {
   name: 'VRadioButton',
   model: {
     prop: 'value',
     event: 'input'
   },
   props: {
-    ...Field.props,
     value: [String, Number],
-    options: {
+    columns: {
       type: Array,
       default: () => [],
       required: true
@@ -18,14 +15,22 @@ export default  {
       type: String,
       default: 'primary' // primary、info、warning、danger
     },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    readonly: {
+      type: Boolean,
+      default: false
+    },
     prop: {
       type: Object,
       default: () => ({ label: 'label', value: 'value' })
     }
   },
   computed: {
-    _options() {
-      return Array.from(this.options).map((item) => ({
+    _columns() {
+      return Array.from(this.columns).map((item) => ({
         ...item,
         text: item[this.prop.label],
         value: item[this.prop.value],
@@ -42,7 +47,11 @@ export default  {
   },
   render() {
     const data = {
-      attrs: { ...this.$attrs },
+      attrs: {
+        ...this.$attrs,
+        disabled: this.disabled,
+        readonly: this.readonly,
+      },
     }
     return (
       <van-field
@@ -53,12 +62,12 @@ export default  {
       >
         <template slot="input">
           {
-            this._options.map((item, index) => {
+            this._columns.map((item, index) => {
               return (
                 <van-button
                   type={this.active(item, index)}
                   size="mini"
-                  disabled={this.$props.disabled || this.$props.readonly || item.disabled}
+                  disabled={this.disabled || this.readonly || item.disabled}
                   onClick={() => this.onClick(item, index)}
                 >
                   {item.label}
