@@ -8,6 +8,12 @@ module.exports = {
       ]
     },
     {
+      title: '业务组件',
+      items: [
+        { path: 'vtoolbar', title: 'v-tool-bar' },
+      ]
+    },
+    {
       title: '表单组件',
       items: [
         { path: 'vfield', title: 'v-field' },
@@ -22,6 +28,8 @@ module.exports = {
         { path: 'vcard', title: 'v-card' },
         { path: 'vprice', title: 'v-price' },
         { path: 'vbadge', title: 'v-badge' },
+        { path: 'vsvgicon', title: 'v-svg-icon' },
+        { path: 'vqrcode', title: 'v-qrcode' },
       ]
     }
   ]

@@ -19,7 +19,8 @@
   },
   "homepage": "https://zehuichan.gitee.io/vant-components/#/home",
   "dependencies": {
-    "dayjs": "^1.10.6"
+    "dayjs": "^1.10.6",
+    "qrcode": "^1.4.4"
   },
   "peerDependencies": {
     "vant": "^2.12.25",
