@@ -13,29 +13,44 @@ export default {
       default: () => [],
       required: true
     },
+    clearable: {
+      type: Boolean,
+      default: false
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    readonly: {
+      type: Boolean,
+      default: false
+    },
     prop: {
       type: Object,
       default: () => ({ label: 'label', value: 'value' })
     }
   },
   computed: {
-    _options() {
+    _columns() {
       return Array.from(this.columns).map((item) => ({
         text: item[this.prop.label],
         value: item[this.prop.value],
         ...item
       }))
     },
-    showIcon() {
-      return this.$attrs.clearable && this.value ? 'clear' : 'arrow'
+    _icon() {
+      if (this.disabled || this.readonly) {
+        return 'arrow'
+      }
+      return this.clearable && this.value.length !== 0 ? 'clear' : 'arrow'
     },
-    text() {
-      const curr = Array.from(this._options).find(item => item.value === this.value)
-      return curr?.text
+    _text() {
+      const curr = Array.from(this._columns).find(item => item.value === this.value)
+      return curr?.label
     },
     index() {
-      for (let i = 0; i < this._options.length; i++) {
-        const item = this._options[i]
+      for (let i = 0; i < this._columns.length; i++) {
+        const item = this._columns[i]
         if (item.value === this.value) {
           return i
         }
@@ -53,7 +68,7 @@ export default {
   },
   methods: {
     onClear() {
-      if (!this.$attrs.clearable) {
+      if (!this.clearable) {
         return false
       }
 
@@ -69,19 +84,54 @@ export default {
       this.$emit('change', value.value, index)
     },
     onClick() {
+      if (this.disabled || this.readonly) {
+        return
+      }
       this.show = true
       this.$nextTick(() => {
         this.$picker.setIndexes([this.index])
       })
-    }
+    },
   },
   render() {
     const data = {
-      attrs: { ...this.$attrs },
-      on: { ...this.$listeners }
+      attrs: {
+        ...this.$attrs,
+        clearable: this.clearable,
+        disabled: this.disabled,
+      },
+      on: {
+        ...this.$listeners,
+        'click': (event) => {
+          this.onClick()
+        },
+        'click-right-icon': (event) => {
+          event.stopPropagation()
+          this.onClear()
+        }
+      }
     }
     return (
-      <div>23</div>
+      <van-field
+        {...data}
+        class="v-picker"
+        value={this._text}
+        right-icon={this._icon}
+        readonly={true}
+        clickable={true}
+      >
+        <van-popup slot="extra" vModel={this.show} position="bottom" get-container="body">
+          <van-picker
+            ref="picker"
+            show-toolbar={true}
+            columns={this._columns}
+            readonly={this.readonly}
+            value-key={this.prop.label}
+            onCancel={this.onCancel}
+            onConfirm={this.onConfirm}
+          />
+        </van-popup>
+      </van-field>
     )
   }
 }
