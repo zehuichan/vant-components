@@ -18,6 +18,7 @@ module.exports = {
       items: [
         { path: 'vfield', title: 'v-field' },
         { path: 'vpicker', title: 'v-picker' },
+        { path: 'vdatepicker', title: 'v-date-picker' },
         { path: 'vradiobutton', title: 'v-radio-button' },
         { path: 'vform', title: 'v-form' },
       ]
