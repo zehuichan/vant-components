@@ -20,7 +20,7 @@ export default {
   data() {
     return {
       value: 3,
-      value2: [],
+      value2: [1, 2],
       columns: [
         { label: '上海', value: 1 },
         { label: '北京', value: 2, disabled: true },
