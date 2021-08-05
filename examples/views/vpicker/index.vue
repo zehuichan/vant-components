@@ -1,13 +1,10 @@
 <template>
   <demo-wrapper title="VPicker 选择器">
     <demo-card title="basic">
-<!--      <v-picker v-model="value" :columns="columns" label="picker" placeholder="placeholder" clearable/>-->
+      <v-picker v-model="value" :columns="columns" label="picker" placeholder="placeholder" clearable/>
     </demo-card>
     <demo-card title="多列选择">
-<!--      <v-picker v-model="value2" :columns="columns2" label="picker" placeholder="placeholder" clearable/>-->
-    </demo-card>
-    <demo-card title="级联选择">
-      <v-picker v-model="value3" :columns="columns3" label="picker" placeholder="placeholder" clearable/>
+      <v-picker v-model="value2" :columns="columns2" label="picker" placeholder="placeholder" clearable/>
     </demo-card>
     <README/>
   </demo-wrapper>

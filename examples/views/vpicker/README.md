@@ -1,29 +1,54 @@
 ### 介绍
 
-提供多个选项集合供用户选择，仅支持单列选择，后续再考虑多列级联。
+提供多个选项集合供用户选择，仅支持单列选择，多列选择，后续再考虑级联。
 
 ### 基础用法
 
 ```html
 <!--basic-->
 <v-picker v-model="value" :columns="columns" label="picker" placeholder="placeholder" clearable/>
-<!--disabled-->
-<v-picker v-model="value" :columns="columns" label="picker" placeholder="placeholder" clearable disabled/>
-<!--readonly-->
-<v-picker v-model="value" :columns="columns" label="picker" placeholder="placeholder" clearable readonly/>
+<!--多列选择-->
+<v-picker v-model="value2" :columns="columns2" label="picker" placeholder="placeholder" clearable/>
 ```
 
 ```js
 export default {
   data() {
     return {
-      value: '',
+      value: 3,
+      value2: [1, 2, 1],
+      value3: [],
       columns: [
         { label: '上海', value: 1 },
         { label: '北京', value: 2, disabled: true },
         { label: '广州', value: 3 },
         { label: '深圳', value: 4 },
-      ]
+      ],
+      columns2: [
+        {
+          values: [
+            { label: '周一', value: 1 },
+            { label: '周二', value: 2 },
+            { label: '周三', value: 3 },
+            { label: '周四', value: 4 },
+            { label: '周五', value: 5 },
+          ]
+        },
+        {
+          values: [
+            { label: '上午', value: 1 },
+            { label: '下午', value: 2 },
+            { label: '晚上', value: 3 },
+          ]
+        },
+        {
+          values: [
+            { label: '吃饭', value: 1 },
+            { label: '睡觉', value: 2 },
+            { label: '打游戏', value: 3 },
+          ]
+        },
+      ],
     }
   },
 }
