@@ -29,8 +29,10 @@ module.exports = {
         { path: 'vcard', title: 'v-card' },
         { path: 'vprice', title: 'v-price' },
         { path: 'vbadge', title: 'v-badge' },
+        { path: 'vtime', title: 'v-time' },
         { path: 'vsvgicon', title: 'v-svg-icon' },
         { path: 'vqrcode', title: 'v-qrcode' },
+        { path: 'vbarcode', title: 'v-barcode' },
       ]
     }
   ]

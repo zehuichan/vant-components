@@ -1,0 +1,33 @@
+<template>
+  <demo-wrapper title="VBarcode 条形码">
+    <demo-card>
+      <demo-block title="默认">
+        <v-field v-model="value"/>
+        <v-barcode v-model="value" :options="options"/>
+      </demo-block>
+    </demo-card>
+    <README/>
+  </demo-wrapper>
+</template>
+
+<script>
+import README from './README.md'
+
+export default {
+  name: 'vbarcode',
+  data() {
+    return {
+      value: 123456789012,
+      options: {
+        format: 'upc',
+        font: 12,
+        height: 58,
+        textMargin: 0
+      }
+    }
+  },
+  components: {
+    README
+  }
+}
+</script>

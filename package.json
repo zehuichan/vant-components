@@ -21,6 +21,7 @@
   "dependencies": {
     "dayjs": "^1.10.6",
     "deepmerge": "^4.2.2",
+    "jsbarcode": "^3.11.4",
     "qrcode": "^1.4.4"
   },
   "peerDependencies": {
