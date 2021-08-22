@@ -34,6 +34,12 @@ module.exports = {
         { path: 'vqrcode', title: 'v-qrcode' },
         { path: 'vbarcode', title: 'v-barcode' },
       ]
+    },
+    {
+      title: 'Antv/F2',
+      items: [
+        { path: 'vf2', title: 'v-f2', new: true },
+      ]
     }
   ]
 }
