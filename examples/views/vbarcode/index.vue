@@ -2,7 +2,7 @@
   <demo-wrapper title="VBarcode 条形码">
     <demo-card>
       <demo-block title="默认">
-        <v-field v-model="value"/>
+        <v-field v-model="value" clearable/>
         <v-barcode v-model="value" :options="options"/>
       </demo-block>
     </demo-card>
@@ -17,9 +17,8 @@ export default {
   name: 'vbarcode',
   data() {
     return {
-      value: 123456789012,
+      value: '123456789012',
       options: {
-        format: 'upc',
         font: 12,
         height: 58,
         textMargin: 0
