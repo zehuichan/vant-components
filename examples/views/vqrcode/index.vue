@@ -1,9 +1,8 @@
 <template>
   <demo-wrapper title="VQrcode 二维码">
     <demo-card>
-      <demo-block title="默认">
-        <v-qrcode v-model="value" @load="onLoad"/>
-      </demo-block>
+      <v-field v-model="value" clearable/>
+      <v-qrcode v-model="value" @load="onLoad"/>
     </demo-card>
     <README/>
   </demo-wrapper>

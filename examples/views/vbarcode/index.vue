@@ -1,10 +1,8 @@
 <template>
   <demo-wrapper title="VBarcode 条形码">
     <demo-card>
-      <demo-block title="默认">
-        <v-field v-model="value" clearable/>
-        <v-barcode v-model="value" :options="options"/>
-      </demo-block>
+      <v-field v-model="value" clearable/>
+      <v-barcode v-model="value" :options="options"/>
     </demo-card>
     <README/>
   </demo-wrapper>
