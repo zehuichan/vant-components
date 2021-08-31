@@ -29,7 +29,7 @@
 import README from './README.md'
 
 export default {
-  name: 'vprice',
+  name: 'vfield',
   data() {
     return {
       form: {

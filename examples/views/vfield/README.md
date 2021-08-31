@@ -6,19 +6,25 @@
 
 ```html
 <!--基本用法-->
+<v-field v-model="form.value" label="field" placeholder="placeholder" clearable/>
+<v-field v-model="form.password" show-password label="password" placeholder="password" clearable/>
+<v-field v-model="form.tel" type="tel" label="tel" placeholder="tel" clearable/>
+<v-field v-model="form.bankCard" type="bankCard" label="bankCard" placeholder="bankCard" clearable/>
+<v-field v-model="form.money" type="money" label="money" placeholder="money" clearable/>
 ```
 
 ```js
 export default {
   data() {
     return {
-      price: 0
+      form: {
+        value: '',
+        password: '',
+        tel: '',
+        bankCard: '',
+        money: '',
+      },
     }
-  },
-  created() {
-    setInterval(() => {
-      this.price = Math.random() * 10000000
-    }, 1000)
   },
 }
 ```
