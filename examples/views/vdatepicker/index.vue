@@ -1,16 +1,18 @@
 <template>
   <demo-wrapper title="VDatePicker 时间选择">
     <demo-card title="基本用法">
-      <v-date-picker v-model="value" label="datetime" placeholder="datetime" clearable/>
+      <div class="nstration">默认为 Date 对象: {{ value1 }}</div>
+      <v-date-picker v-model="value1" label="datetime" placeholder="datetime" clearable/>
     </demo-card>
     <demo-card title="value-format">
-      <v-date-picker v-model="value" label="datetime" placeholder="datetime" value-format="YYYY-MM-DD HH:mm:ss" clearable/>
+      <div class="nstration">使用 value-format: {{ value2 }}</div>
+      <v-date-picker v-model="value2" label="datetime" placeholder="datetime" value-format="yyyy-MM-dd HH:mm:ss" clearable/>
     </demo-card>
-    <demo-card title="disabled">
-      <v-date-picker v-model="value" label="datetime" placeholder="datetime" disabled clearable/>
+    <demo-card title="选择年月">
+      <v-date-picker v-model="value3" label="datetime" placeholder="datetime" type="year-month" clearable/>
     </demo-card>
-    <demo-card title="readonly">
-      <v-date-picker v-model="value" label="datetime" placeholder="datetime" readonly clearable/>
+    <demo-card title="选择月日">
+      <v-date-picker v-model="value3" label="datetime" placeholder="datetime" type="month-day" clearable/>
     </demo-card>
     <README/>
   </demo-wrapper>
@@ -23,7 +25,9 @@ export default {
   name: 'vdatetime',
   data() {
     return {
-      value: new Date()
+      value1: null,
+      value2: null,
+      value3: null,
     }
   },
   components: {
@@ -31,3 +35,10 @@ export default {
   }
 }
 </script>
+
+<style>
+.nstration {
+  color: #8492a6;
+  font-size: 14px;
+}
+</style>

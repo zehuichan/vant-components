@@ -1,17 +1,27 @@
 ### 介绍
 
-用来对商品价格数值的小数点前后部分应用不同样式，还支持人民币符号、千位分隔符、设置小数点位数等功能。
+时间选择器，支持日期、年月、时分等维度。
 
 ### 基础用法
 
 ```html
+<!--基本用法-->
+<v-date-picker v-model="value1" label="datetime" placeholder="datetime" clearable/>
+<!--value-format-->
+<v-date-picker v-model="value2" label="datetime" placeholder="datetime" value-format="yyyy-MM-dd HH:mm:ss" clearable/>
+<!--选择年月-->
+<v-date-picker v-model="value3" label="datetime" placeholder="datetime" type="year-month" clearable/>
+<!--选择月日-->
+<v-date-picker v-model="value3" label="datetime" placeholder="datetime" type="month-day" clearable/>
 ```
 
 ```js
 export default {
   data() {
     return {
-      price: 0
+      value1: null,
+      value2: null,
+      value3: null,
     }
   },
 }
