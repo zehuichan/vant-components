@@ -6,6 +6,9 @@
     <demo-card title="多列选择">
       <v-picker v-model="value2" :columns="columns2" label="picker" placeholder="placeholder" clearable/>
     </demo-card>
+    <demo-card title="级联选择">
+      <v-picker v-model="value3" :columns="columns3" label="picker" placeholder="placeholder" clearable/>
+    </demo-card>
     <README/>
   </demo-wrapper>
 </template>
@@ -14,12 +17,12 @@
 import README from './README.md'
 
 export default {
-  name: 'vprice',
+  name: 'vpicker',
   data() {
     return {
       value: 3,
       value2: [1, 2, 1],
-      value3: [],
+      value3: [330000, 330100, 330110],
       columns: [
         { label: '上海', value: 1 },
         { label: '北京', value: 2, disabled: true },

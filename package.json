@@ -22,7 +22,8 @@
     "date-fns": "^2.23.0",
     "deepmerge": "^4.2.2",
     "jsbarcode": "^3.11.5",
-    "qrcode": "^1.4.4"
+    "qrcode": "^1.4.4",
+    "treemate": "^0.3.2"
   },
   "peerDependencies": {
     "@antv/f2": "^3.8.9",
