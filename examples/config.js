@@ -40,6 +40,13 @@ module.exports = {
       items: [
         { path: 'vf2', title: 'v-f2', new: true },
       ]
+    },
+    {
+      title: 'WeChat',
+      items: [
+        { path: 'jweixin', title: 'jweixin', new: true },
+        { path: 'auth', title: 'auth', new: true },
+      ]
     }
   ]
 }
