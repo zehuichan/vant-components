@@ -8,7 +8,7 @@
 // main.js
 import Vue from 'vue'
 
-import JWeixin from '@/plugins/jweixin'
+import JWeixin from 'vant-components/lib/plugins/jweixin'
 
 Vue.use(JWeixin)
 ```
