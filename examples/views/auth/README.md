@@ -22,7 +22,7 @@ VUE_APP_WECHAT_APPID = '产线appid'
 // main.js
 import Vue from 'vue'
 
-import Auth from '@/plugins/auth'
+import Auth from 'vant-components/lib/plugins/auth'
 
 Vue.use(Auth, {
   appid: process.env.VUE_APP_WECHAT_APPID
