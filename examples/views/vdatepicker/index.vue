@@ -37,8 +37,5 @@ export default {
 </script>
 
 <style>
-.nstration {
-  color: #8492a6;
-  font-size: 14px;
-}
+
 </style>

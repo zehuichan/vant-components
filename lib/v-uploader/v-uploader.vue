@@ -74,7 +74,7 @@
             } else {
               //此处是安卓中的唯一得坑！在拼接前需要对localData进行换行符的全局替换
               //此时一个正常的base64图片路径就完美生成赋值到img的src中了
-              file = `data:image/${localData.replace(IMAGE_REGEXP, '$1')};base64,` + localData.replace(/\n/g, '')
+              file = `data:image/jpeg;base64,` + localData.replace(/\n/g, '')
             }
             this.show = false
             await this.readerData(file)
