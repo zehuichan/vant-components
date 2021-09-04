@@ -17,11 +17,13 @@ module.exports = {
       title: '表单组件',
       items: [
         { path: 'vfield', title: 'v-field' },
-        { path: 'vautocomplete', title: 'v-auto-complete' },
+        { path: 'vautocomplete', title: 'v-auto-complete', new: true },
         { path: 'vpicker', title: 'v-picker' },
         { path: 'vdatepicker', title: 'v-date-picker' },
         { path: 'vswitch', title: 'v-switch' },
         { path: 'vstepper', title: 'v-stepper' },
+        { path: 'vrate', title: 'v-rate' },
+        { path: 'vslider', title: 'v-slider' },
         { path: 'vradiobutton', title: 'v-radio-button' },
         { path: 'vform', title: 'v-form' },
       ]

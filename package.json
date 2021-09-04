@@ -23,6 +23,7 @@
     "deepmerge": "^4.2.2",
     "jsbarcode": "^3.11.5",
     "qrcode": "^1.4.4",
+    "throttle-debounce": "^3.0.1",
     "treemate": "^0.3.3"
   },
   "peerDependencies": {
