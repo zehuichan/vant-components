@@ -1,3 +1,44 @@
 .v-auto-complete {
-  display: block;
+}
+
+.v-auto-complete--suggestion__popover {
+  padding: 16px 0;
+  width: 300px;
+  max-height: 280px;
+  overflow-y: scroll;
+}
+
+.v-auto-complete--suggestion__list {
+}
+
+.v-auto-complete--suggestion__item {
+  padding: 0 24px;
+  line-height: 36px;
+  cursor: pointer;
+  color: #606266;
+  font-size: 14px;
+  list-style: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &:hover {
+    background-color: #f5f7fa;
+  }
+}
+
+.v-auto-complete--suggestion__loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 36px;
+}
+
+.v-auto-complete--suggestion__empty {
+  padding: 0 24px;
+  line-height: 36px;
+  font-size: 14px;
+  color: #969799;
+  text-align: center;
 }
