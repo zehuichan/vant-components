@@ -1,7 +1,7 @@
 <template>
   <demo-wrapper title="VRadioButton 单选按钮组">
     <demo-card title="basic">
-      <v-radio-button label="关键城市" v-model="value" :columns="columns" input-align="right"/>
+      <v-radio-button label="关键城市" v-model="value" :columns="columns" required/>
     </demo-card>
     <demo-card title="color">
       <v-radio-button label="关键城市" v-model="value" :columns="columns" color="danger"/>
