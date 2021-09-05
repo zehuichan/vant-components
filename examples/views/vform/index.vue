@@ -19,6 +19,12 @@ const defaultForm = {
   tel: '15800066380',
   bankCard: null,
   money: null,
+  autocomplete: '',
+  switch: null,
+  stepper: null,
+  rate: null,
+  slider: null,
+  radio: null,
 }
 
 export default {
@@ -34,7 +40,6 @@ export default {
               label: 'field',
               key: 'field',
               type: 'field',
-              value: null,
               placeholder: 'field',
               clearable: true,
               required: true,
@@ -46,7 +51,6 @@ export default {
               label: 'tel',
               key: 'tel',
               type: 'tel',
-              value: null,
               placeholder: 'tel',
               clearable: true,
             },
@@ -54,7 +58,6 @@ export default {
               label: 'bankCard',
               key: 'bankCard',
               type: 'bankCard',
-              value: null,
               placeholder: 'bankCard',
               clearable: true,
             },
@@ -62,12 +65,77 @@ export default {
               label: 'money',
               key: 'money',
               type: 'money',
-              value: null,
               placeholder: 'money',
               clearable: true,
-            }
+            },
+            {
+              label: 'autocomplete',
+              key: 'autocomplete',
+              type: 'autocomplete',
+              placeholder: 'autocomplete',
+              clearable: true,
+              fetchSuggestions(queryString, cb) {
+                cb([])
+              }
+            },
           ]
-        }
+        },
+        {
+          title: 'Switch 相关',
+          options: [
+            {
+              label: 'switch',
+              key: 'switch',
+              type: 'switch',
+            },
+          ]
+        },
+        {
+          title: 'Stepper 相关',
+          options: [
+            {
+              label: 'stepper',
+              key: 'stepper',
+              type: 'stepper',
+            },
+          ]
+        },
+        {
+          title: 'Rate 相关',
+          options: [
+            {
+              label: 'rate',
+              key: 'rate',
+              type: 'rate',
+            },
+          ]
+        },
+        {
+          title: 'Slider 相关',
+          options: [
+            {
+              label: 'slider',
+              key: 'slider',
+              type: 'slider',
+            },
+          ]
+        },
+        {
+          title: 'Radio 相关',
+          options: [
+            {
+              label: 'radio',
+              key: 'radio',
+              type: 'radiobutton',
+              columns: [
+                { label: '上海', value: 1 },
+                { label: '北京', value: 2, disabled: true },
+                { label: '广州', value: 3 },
+                { label: '深圳', value: 4 },
+              ]
+            },
+          ]
+        },
       ]
     }
   },
@@ -75,7 +143,8 @@ export default {
     submit() {
       this.$refs.form.validate(Object.keys(this.form)).then(() => {
         this.$toast('Success.')
-      }).catch(() => {
+      }).catch((err) => {
+        console.log(err)
       })
     }
   },

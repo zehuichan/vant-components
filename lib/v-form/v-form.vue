@@ -1,11 +1,12 @@
 <template>
-  <van-form class="v-form" ref="form" validate-first>
+  <van-form class="v-form" ref="form" validate-first v-bind="[$attrs, $props]">
     <slot/>
     <template v-if="group">
       <van-cell-group v-for="group in options" :key="group.title" :title="group.title" :border="group.border">
         <template v-for="item in group.options">
-          <v-form-item
-            :item="item"
+          <component
+            :is="getComponentName(item.type)"
+            v-bind="item"
             :value="value[item.key]"
             @input="$_inputChange(item, $event)"
           />
@@ -24,6 +25,7 @@
 <script>
 export default {
   name: 'VForm',
+  inheritAttrs: false,
   model: {
     prop: 'value',
     event: 'input'
@@ -46,6 +48,30 @@ export default {
     },
   },
   methods: {
+    getComponentName(type) {
+      if (['field', 'tel', 'bankCard', 'money', 'password', 'digit', 'number', 'textarea'].includes(type)) {
+        return 'v-field'
+      }
+      if (['autocomplete'].includes(type)) {
+        return 'v-auto-complete'
+      }
+      if (['switch'].includes(type)) {
+        return 'v-switch'
+      }
+      if (['stepper'].includes(type)) {
+        return 'v-stepper'
+      }
+      if (['rate'].includes(type)) {
+        return 'v-rate'
+      }
+      if (['slider'].includes(type)) {
+        return 'v-slider'
+      }
+      if (['radiobutton'].includes(type)) {
+        return 'v-radio-button'
+      }
+      return type
+    },
     $_inputChange({ key }, event) {
       this.$emit('input', { ...this.value, [key]: event })
       this.$emit('change', { ...this.value, [key]: event })
@@ -61,6 +87,7 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="less">
+.v-form {
+}
 </style>
