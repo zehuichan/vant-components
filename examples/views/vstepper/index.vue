@@ -1,5 +1,5 @@
 <template>
-  <demo-wrapper title="VSwitch 开关">
+  <demo-wrapper title="VStepper 步进器">
     <demo-card title="基础用法">
       <v-stepper label="switch" v-model="value"/>
     </demo-card>
