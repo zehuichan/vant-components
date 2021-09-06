@@ -18,7 +18,7 @@ Vue.use(Vant)
 ### 安装
 
 ```shell
-npm i vant-components -S
+npm i vantui-components -S
 ```
 
 ### 引入组件
@@ -26,7 +26,7 @@ npm i vant-components -S
 ```js
 // main.js
 // 全局引入
-import VComponents from 'vant-components'
+import VComponents from 'vantui-components'
 
 Vue.use(VComponents)
 ```
