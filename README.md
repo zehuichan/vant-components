@@ -14,16 +14,16 @@ Vue.use(Vant)
 
 ### 安装
 ```sh
-npm i vant-components -S
+npm i vantui-components -S
 #or
-yarn add element-components
+yarn add vantui-components
 ```
 
 ### 引入组件
 ```js
 // main.js
 // 全局引入
-import VComponents from 'vcomponents-element'
+import VComponents from 'vantui-components'
 
 Vue.use(VComponents)
 ```
