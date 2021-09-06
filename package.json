@@ -1,5 +1,5 @@
 {
-  "name": "vant-components",
+  "name": "vantui-components",
   "version": "1.0.0",
   "author": "Zehui Chan <jasonchenzehui@gmail.com>",
   "main": "dist/VantComponents.umd.min.js",
