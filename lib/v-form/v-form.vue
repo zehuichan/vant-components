@@ -1,22 +1,34 @@
 <template>
-  <van-form class="v-form" ref="form" validate-first v-bind="[$attrs, $props]">
+  <van-form class="v-form" ref="form" validate-first v-bind="$attrs">
     <slot/>
-    <template v-if="group">
+    <template v-if="_dataType === 'group'">
       <van-cell-group v-for="group in options" :key="group.title" :title="group.title" :border="group.border">
         <template v-for="item in group.options">
-          <component
-            :is="getComponentName(item.type)"
-            v-bind="item"
-            :value="value[item.key]"
-            @input="$_inputChange(item, $event)"
-          />
-          <slot :scope="item" :name="item.key"/>
+          <slot :scope="item" :name="item.key">
+            <component
+              v-bind="item"
+              :is="getComponentName(item.type)"
+              :name="item.key"
+              :rules="item.rules"
+              :value="value[item.key]"
+              @input="$_inputChange(item, $event)"
+            />
+          </slot>
         </template>
       </van-cell-group>
     </template>
     <template v-else>
       <template v-for="item in options">
-        <slot :scope="item" :name="item.key"/>
+        <slot :scope="item" :name="item.key">
+          <component
+            v-bind="item"
+            :is="getComponentName(item.type)"
+            :name="item.key"
+            :rules="item.rules"
+            :value="value[item.key]"
+            @input="$_inputChange(item, $event)"
+          />
+        </slot>
       </template>
     </template>
   </van-form>
@@ -41,10 +53,17 @@ export default {
       type: Array,
       default: () => [],
       required: true
-    },
-    group: {
-      type: Boolean,
-      default: false
+    }
+  },
+  computed: {
+    _dataType() {
+      const firstColumn = this.options[0] || {}
+
+      if (firstColumn.title) {
+        return 'group'
+      }
+
+      return 'options'
     },
   },
   methods: {
@@ -69,6 +88,12 @@ export default {
       }
       if (['radiobutton'].includes(type)) {
         return 'v-radio-button'
+      }
+      if (['picker'].includes(type)) {
+        return 'v-picker'
+      }
+      if (['datepicker'].includes(type)) {
+        return 'v-date-picker'
       }
       return type
     },
