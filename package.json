@@ -1,6 +1,6 @@
 {
   "name": "vant-components",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "Zehui Chan <jasonchenzehui@gmail.com>",
   "main": "dist/VantComponents.umd.min.js",
   "scripts": {
