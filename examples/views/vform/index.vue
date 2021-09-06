@@ -1,7 +1,7 @@
 <template>
   <demo-wrapper title="VForm 表单">
     <demo-card>
-      <v-form ref="form" v-model="form" :options="options">
+      <v-form ref="form" v-model="form" :options="options" :validate-first="false">
         <template #smsCode="{scope}">
           <v-field
             v-model="form.smsCode"
@@ -151,7 +151,11 @@ export default {
               clearable: true,
               fetchSuggestions(queryString, cb) {
                 cb(restaurants)
-              }
+              },
+              required: true,
+              rules: [
+                { required: true, message: 'required.' }
+              ]
             },
           ]
         },
@@ -182,6 +186,10 @@ export default {
               label: 'rate',
               key: 'rate',
               type: 'rate',
+              required: true,
+              rules: [
+                { required: true, message: 'required.' }
+              ]
             },
           ]
         },
@@ -213,6 +221,10 @@ export default {
                 { label: '北京', value: 2, disabled: true },
                 { label: '广州', value: 3 },
                 { label: '深圳', value: 4 },
+              ],
+              required: true,
+              rules: [
+                { required: true, message: 'required.' }
               ]
             },
           ]
@@ -231,6 +243,10 @@ export default {
                 { label: '北京', value: 2, disabled: true },
                 { label: '广州', value: 3 },
                 { label: '深圳', value: 4 },
+              ],
+              required: true,
+              rules: [
+                { required: true, message: 'required.' }
               ]
             },
             {
@@ -239,6 +255,10 @@ export default {
               type: 'datepicker',
               placeholder: 'datepicker',
               clearable: true,
+              required: true,
+              rules: [
+                { required: true, message: 'required.' }
+              ]
             },
           ]
         },
