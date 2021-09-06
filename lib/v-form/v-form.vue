@@ -1,5 +1,5 @@
 <template>
-  <van-form class="v-form" ref="form" validate-first v-bind="$attrs">
+  <van-form class="v-form" ref="form" v-bind="$attrs">
     <slot/>
     <template v-if="_dataType === 'group'">
       <van-cell-group v-for="group in options" :key="group.title" :title="group.title" :border="group.border">
