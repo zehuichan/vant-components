@@ -20,7 +20,7 @@ export default {
   name: 'vpicker',
   data() {
     return {
-      value: 3,
+      value: null,
       value2: [1, 2, 1],
       value3: [330000, 330100, 330110],
       columns: [
