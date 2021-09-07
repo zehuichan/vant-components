@@ -1,6 +1,15 @@
 <template>
   <demo-wrapper title="VAutoComplete 自动填充">
-    <demo-card>
+    <demo-card title="基础用法">
+      <v-auto-complete
+        v-model="value"
+        label="autocomplete"
+        placeholder="placeholder"
+        clearable
+        :fetch-suggestions="querySearch"
+      />
+    </demo-card>
+    <demo-card title="自定义模板">
       <v-auto-complete
         v-model="value"
         label="autocomplete"
@@ -8,10 +17,10 @@
         clearable
         :fetch-suggestions="querySearch"
       >
-        <template #default="{item}">
+        <div class="custom-item" slot-scope="{item}">
           <div class="name">{{ item.value }}</div>
           <div class="addr">{{ item.address }}</div>
-        </template>
+        </div>
       </v-auto-complete>
     </demo-card>
     <README/>
@@ -100,7 +109,7 @@ export default {
 </script>
 
 <style lang="less">
-.v-auto-complete--suggestion__item {
+.custom-item {
   line-height: 25px;
 }
 
