@@ -105,3 +105,5 @@ export default {
 | disabled     | 是否禁用     | _boolean_  | `false`    |
 | readonly     | 是否只读     | _boolean_  | `false`    |
 | prop | 唯一标识的键名 | _object_  | `{ label: 'label', value: 'value' }`    |
+
+### 待优化...

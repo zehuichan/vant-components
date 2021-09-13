@@ -18,6 +18,9 @@ module.exports = {
       items: [
         { path: 'vfield', title: 'v-field' },
         { path: 'vautocomplete', title: 'v-auto-complete', new: true },
+        { path: 'vcalendar', title: 'v-calendar' },
+        { path: 'vcascader', title: 'v-cascader' },
+        { path: 'varea', title: 'v-area' },
         { path: 'vpicker', title: 'v-picker' },
         { path: 'vdatepicker', title: 'v-date-picker' },
         { path: 'vswitch', title: 'v-switch' },
@@ -34,6 +37,7 @@ module.exports = {
         { path: 'vcard', title: 'v-card' },
         { path: 'vprice', title: 'v-price' },
         { path: 'vbadge', title: 'v-badge' },
+        { path: 'vellipsis', title: 'v-ellipsis', new: true },
         { path: 'vtime', title: 'v-time' },
         { path: 'vsvgicon', title: 'v-svg-icon' },
         { path: 'vqrcode', title: 'v-qrcode' },
