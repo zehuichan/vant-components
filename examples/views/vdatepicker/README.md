@@ -34,3 +34,7 @@ export default {
 | 参数   | 说明           | 类型      | 默认值 |
 | ------ | -------------- | --------- | ------ |
 | v-model (value) | 绑定值 | _string \| number \| date_  | _    |
+| format  |  指定输入框的格式，参考[date-fns](https://date-fns.org/)  | _string_ | `yyyy-MM-dd`    |
+| value-format  | 指定绑定值的格式，参考[date-fns](https://date-fns.org/)  | _string_ | _    |
+
+### 待优化...
