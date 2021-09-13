@@ -52,5 +52,12 @@ export default {
 | v-model (value) | 绑定值 | _string_  | _    |
 | debounce | 获取输入建议的去抖延时   | _number_  | `300`    |
 | value-key | 输入建议对象中用于显示的键名 | _string_  | `value`    |
-| fetch-suggestions   | 返回输入建议的方法，仅当你的输入建议数据 resolve 时，通过调用 callback(data:[]) 来返回它 | _Function(
-queryString,callback)_  | _    |
+| fetch-suggestions | 返回输入建议的方法，仅当你的输入建议数据 resolve 时，通过调用 callback(data:[]) 来返回它 | _Function(queryString,callback)_  | _    |
+
+### Slots
+
+| 名称   | 说明           | 参数           |
+| ------ | -------------- | -------------- | 
+| default | 自定义输入建议  | `{ item }`  |
+
+### 待优化...
