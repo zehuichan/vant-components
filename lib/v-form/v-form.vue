@@ -9,7 +9,6 @@
               v-bind="item"
               :is="getComponentName(item.type)"
               :name="item.key"
-              :rules="item.rules"
               :value="value[item.key]"
               @input="$_inputChange(item, $event)"
             />
@@ -24,7 +23,6 @@
             v-bind="item"
             :is="getComponentName(item.type)"
             :name="item.key"
-            :rules="item.rules"
             :value="value[item.key]"
             @input="$_inputChange(item, $event)"
           />
@@ -94,6 +92,15 @@ export default {
       }
       if (['datepicker'].includes(type)) {
         return 'v-date-picker'
+      }
+      if (['calendar'].includes(type)) {
+        return 'v-calendar'
+      }
+      if (['cascader'].includes(type)) {
+        return 'v-cascader'
+      }
+      if (['area'].includes(type)) {
+        return 'v-area'
       }
       return type
     },

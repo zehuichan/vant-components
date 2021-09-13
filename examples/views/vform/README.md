@@ -29,10 +29,13 @@
 ```
 
 ```js
+// mapping详细看源码
+import { restaurants, options } from './mapping'
+
 const defaultForm = {
   field: null,
   smsCode: null,
-  tel: '',
+  tel: '15800066380',
   bankCard: null,
   money: null,
   autocomplete: '',
@@ -42,154 +45,21 @@ const defaultForm = {
   slider: 50,
   range: [10, 50],
   radio: null,
+  picker: null,
+  datepicker: null,
+  calendar: null,
+  calendarmultiple: [],
+  calendarrange: [],
+  cascader: [],
+  area: [],
 }
 
 export default {
   data() {
     return {
       form: Object.assign({}, defaultForm),
-      options: [
-        {
-          title: 'Field 相关',
-          options: [
-            {
-              label: 'field',
-              key: 'field',
-              type: 'field',
-              placeholder: 'field',
-              clearable: true,
-              required: true,
-              rules: [
-                { required: true, message: 'required.' }
-              ]
-            },
-            {
-              label: 'smsCode',
-              key: 'smsCode',
-              type: 'smsCode',
-              placeholder: 'smsCode',
-            },
-            {
-              label: 'tel',
-              key: 'tel',
-              type: 'tel',
-              placeholder: 'tel',
-              clearable: true,
-            },
-            {
-              label: 'bankCard',
-              key: 'bankCard',
-              type: 'bankCard',
-              placeholder: 'bankCard',
-              clearable: true,
-            },
-            {
-              label: 'money',
-              key: 'money',
-              type: 'money',
-              placeholder: 'money',
-              clearable: true,
-            },
-            {
-              label: 'autocomplete',
-              key: 'autocomplete',
-              type: 'autocomplete',
-              placeholder: 'autocomplete',
-              clearable: true,
-              fetchSuggestions(queryString, cb) {
-                cb([])
-              }
-            },
-          ]
-        },
-        {
-          title: 'Switch 相关',
-          options: [
-            {
-              label: 'switch',
-              key: 'switch',
-              type: 'switch',
-            },
-          ]
-        },
-        {
-          title: 'Stepper 相关',
-          options: [
-            {
-              label: 'stepper',
-              key: 'stepper',
-              type: 'stepper',
-            },
-          ]
-        },
-        {
-          title: 'Rate 相关',
-          options: [
-            {
-              label: 'rate',
-              key: 'rate',
-              type: 'rate',
-            },
-          ]
-        },
-        {
-          title: 'Slider 相关',
-          options: [
-            {
-              label: 'slider',
-              key: 'slider',
-              type: 'slider',
-            },
-            {
-              label: 'range',
-              key: 'range',
-              type: 'slider',
-              range: true
-            },
-          ]
-        },
-        {
-          title: 'Radio 相关',
-          options: [
-            {
-              label: 'radio',
-              key: 'radio',
-              type: 'radiobutton',
-              columns: [
-                { label: '上海', value: 1 },
-                { label: '北京', value: 2, disabled: true },
-                { label: '广州', value: 3 },
-                { label: '深圳', value: 4 },
-              ]
-            },
-          ]
-        },
-        {
-          title: 'Picker 相关',
-          options: [
-            {
-              label: 'picker',
-              key: 'picker',
-              type: 'picker',
-              placeholder: 'picker',
-              clearable: true,
-              columns: [
-                { label: '上海', value: 1 },
-                { label: '北京', value: 2, disabled: true },
-                { label: '广州', value: 3 },
-                { label: '深圳', value: 4 },
-              ]
-            },
-            {
-              label: 'datepicker',
-              key: 'datepicker',
-              type: 'datepicker',
-              placeholder: 'datepicker',
-              clearable: true,
-            },
-          ]
-        },
-      ]
+      restaurants,
+      options,
     }
   },
   methods: {
@@ -229,12 +99,9 @@ export default {
 | radiobutton | 单选按钮组 | 
 | picker | 选择器 | 
 | datepicker | 时间选择 | 
+| calendar | 日历 | 
+| cascader | 级联 | 
+| area | 省市区 | 
 
-### todo list 后续开放更多类型
-
-| 类型   | 说明           | 
-| ------ | -------------- | 
-| ~~calendar~~ | 日历 | 
-| ~~cascader~~ | 级联选择 | 
-| ~~area~~ | 省市区选择 | 
+### 待优化...
 
