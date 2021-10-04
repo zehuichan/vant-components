@@ -34,7 +34,8 @@ Object.keys(filters).forEach(key => {
 Vue.config.productionTip = false
 console.log('Vue', Vue.version)
 console.log('Vant', Vant.version)
-console.log('@vcomponetns/vant-ui', VComponents.version)
+console.log('@vcomponetns/vant-ui', `Published ${APP_VERSION}-${GIT_HASH} @zehuichan`)
+console.log('@vcomponetns/vant-ui', `Build date: ${BUILD_DATE} @zehuichan`)
 
 new Vue({
   router,
