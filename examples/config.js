@@ -10,6 +10,7 @@ module.exports = {
     {
       title: '业务组件',
       items: [
+        { path: 'vspace', title: 'v-space', new: true },
         { path: 'vtoolbar', title: 'v-tool-bar' },
       ]
     },
