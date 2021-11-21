@@ -18,11 +18,12 @@ module.exports = {
       title: '表单组件',
       items: [
         { path: 'vfield', title: 'v-field' },
-        { path: 'vautocomplete', title: 'v-auto-complete', new: true },
+        { path: 'vautocomplete', title: 'v-auto-complete' },
         { path: 'vcalendar', title: 'v-calendar' },
         { path: 'vcascader', title: 'v-cascader' },
         { path: 'varea', title: 'v-area' },
         { path: 'vpicker', title: 'v-picker' },
+        { path: 'vmultiplepicker', title: 'v-multiple-picker', new: true },
         { path: 'vdatepicker', title: 'v-date-picker' },
         { path: 'vswitch', title: 'v-switch' },
         { path: 'vstepper', title: 'v-stepper' },
@@ -38,7 +39,7 @@ module.exports = {
         { path: 'vcard', title: 'v-card' },
         { path: 'vprice', title: 'v-price' },
         { path: 'vbadge', title: 'v-badge' },
-        { path: 'vellipsis', title: 'v-ellipsis', new: true },
+        { path: 'vellipsis', title: 'v-ellipsis' },
         { path: 'vtime', title: 'v-time' },
         { path: 'vsvgicon', title: 'v-svg-icon' },
         { path: 'vqrcode', title: 'v-qrcode' },
@@ -48,7 +49,7 @@ module.exports = {
     {
       title: 'Antv/F2',
       items: [
-        { path: 'vf2', title: 'v-f2', new: true },
+        { path: 'vf2', title: 'v-f2' },
       ]
     },
     {
