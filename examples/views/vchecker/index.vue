@@ -1,27 +1,37 @@
 <template>
   <demo-wrapper title="VChecker 多选选择器">
-    <!--    <demo-card title="basic">-->
-    <!--      {{ value }}-->
-    <!--      <van-cell is-link title="基础用法" @click="show = true"/>-->
-    <!--      <v-checker-->
-    <!--        v-model="value"-->
-    <!--        :visible="show"-->
-    <!--        :columns="columns"-->
-    <!--        title="属性选择器"-->
-    <!--        @confirm="onConfirm"-->
-    <!--        @change="onChange"-->
-    <!--      />-->
-    <!--    </demo-card>-->
-    <demo-card title="多列选择">
-      {{ value2 }}
-      <van-cell is-link title="多列选择" @click="show2 = true"/>
+    <demo-card title="基础用法">
+      <div class="nstration">默认为 Date 对象: {{ value }}</div>
+      <v-checker
+        v-model="value"
+        :columns="columns"
+      />
+    </demo-card>
+    <demo-card title="分组">
+      <div class="nstration">默认为 Date 对象: {{ value2 }}</div>
       <v-checker
         v-model="value2"
-        :visible="show2"
         :columns="columns2"
         multiple
-        title="属性选择器"
+        :multiple-limit="5"
       />
+    </demo-card>
+    <demo-card title="搭配表单项使用">
+      <van-field
+        label="属性选择"
+        :value="value2.toString()"
+        readonly
+        clickable
+        @click="show = true"
+      />
+      <van-popup v-model="show" round position="bottom">
+        <v-checker
+          v-model="value2"
+          :columns="columns2"
+          multiple
+          :multiple-limit="5"
+        />
+      </van-popup>
     </demo-card>
     <README/>
   </demo-wrapper>
@@ -35,7 +45,6 @@ export default {
   data() {
     return {
       show: false,
-      show2: false,
       value: [],
       value2: [],
       columns: [
@@ -59,9 +68,9 @@ export default {
         {
           title: 'title2',
           values: [
-            { label: '上午', value: 21 },
-            { label: '下午', value: 22 },
-            { label: '晚上', value: 23 },
+            { label: '上午', value: 21, imgUrl: 'https://b.yzcdn.cn/vant/sku/shoes-1.png' },
+            { label: '下午', value: 22, imgUrl: 'https://b.yzcdn.cn/vant/sku/shoes-2.png' },
+            { label: '晚上', value: 23, imgUrl: 'https://b.yzcdn.cn/vant/sku/shoes-3.png' },
           ]
         },
         {
@@ -73,14 +82,6 @@ export default {
           ]
         },
       ],
-    }
-  },
-  methods: {
-    onConfirm() {
-    },
-    onCancel() {
-    },
-    onChange() {
     }
   },
   components: {
