@@ -23,7 +23,7 @@ module.exports = {
         { path: 'vcascader', title: 'v-cascader' },
         { path: 'varea', title: 'v-area' },
         { path: 'vpicker', title: 'v-picker' },
-        { path: 'vmultiplepicker', title: 'v-multiple-picker', new: true },
+        { path: 'vchecker', title: 'v-checker', new: true },
         { path: 'vdatepicker', title: 'v-date-picker' },
         { path: 'vswitch', title: 'v-switch' },
         { path: 'vstepper', title: 'v-stepper' },
