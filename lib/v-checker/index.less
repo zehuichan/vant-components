@@ -3,6 +3,14 @@
 }
 
 .v-checker__content {
+  padding-top: 12px;
+}
+
+.v-checker__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 44px;
 }
 
 .v-checker__group {
@@ -44,7 +52,7 @@
 }
 
 .v-checker__item--active {
-  color: #ee0a24;
+  color: #f22e00;
 
   &::before {
     background: currentColor;
@@ -69,13 +77,4 @@
 .v-checker__item-name {
   z-index: 1;
   padding: 8px;
-}
-
-.v-checker__footer {
-  padding: 8px 16px 16px;
-  text-align: center;
-
-  .van-button {
-    width: 132px;
-  }
 }
