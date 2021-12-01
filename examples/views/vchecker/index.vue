@@ -16,6 +16,7 @@
         v-model="value2"
         title="标题"
         :columns="columns2"
+        multiple
         @confirm="onConfirm"
         @cancel="onCancel"
       />
