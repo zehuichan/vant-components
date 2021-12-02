@@ -88,7 +88,7 @@ export default {
     }
   },
   methods: {
-    onConfirm() {
+    onConfirm(value, rawData) {
       this.show = false
       this.$toast('confirm: ' + this.value2.toString())
     },

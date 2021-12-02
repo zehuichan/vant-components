@@ -78,7 +78,7 @@ export default {
     }
   },
   methods: {
-    onConfirm() {
+    onConfirm(value, rawData) {
       this.show = false
       this.$toast('confirm: ' + this.value2.toString())
     },
@@ -94,12 +94,20 @@ export default {
 
 ### Base Props
 
-| 参数   | 说明           | 类型      | 默认值 |
-| ------ | -------------- | --------- | ------ |
-| v-model (value) | 绑定值 | _array_  | _    |
-| title | 标题 | _string_  | _    |
-| columns | 对象数组，配置每一列显示的数据 | _Options[]_  | `[]`    |
-| multiple | 是否多选 | _boolean_  | `false`  |
-| multiple-limit | 多选时用户最多可以选择的项目数，为 0 则不限制 | _number_  | `0`    |
-| lazy-load | 是否开启图片懒加载 | _boolean_  | `false`  |
-| prop | 唯一标识的键名 | _object_  | `{ label: 'label', value: 'value' }`    |
+| 参数              | 说明                       | 类型          | 默认值                                  |
+|-----------------|--------------------------|-------------|--------------------------------------|
+| v-model (value) | 绑定值                      | _array_     | _                                    |
+| title           | 标题                       | _string_    | _                                    |
+| columns         | 对象数组，配置每一列显示的数据          | _Options[]_ | `[]`                                 |
+| multiple        | 是否多选                     | _boolean_   | `false`                              |
+| multiple-limit  | 多选时用户最多可以选择的项目数，为 0 则不限制 | _number_    | `0`                                  |
+| lazy-load       | 是否开启图片懒加载                | _boolean_   | `false`                              |
+| prop            | 唯一标识的键名                  | _object_    | `{ label: 'label', value: 'value' }` |
+
+### Events
+
+| 事件名     | 说明         | 回调参数                           | 
+|---------|------------|--------------------------------|
+| change  | 选中值发生变化时触发 | _value: array, rawData: array_ | 
+| confirm | 点击完成按钮时触发	 | _value: array, rawData: array_ |
+| cancel  | 是否多选       | _                              |
