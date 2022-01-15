@@ -1,7 +1,11 @@
 <template>
   <demo-wrapper title="VTable 表格">
     <demo-card title="基础用法">
-      <v-table :columns="columns" :data="tabledata"/>
+      <v-table :columns="columns" :data="tabledata">
+        <template #name="{scope}">
+          {{ scope }}
+        </template>
+      </v-table>
     </demo-card>
     <README/>
   </demo-wrapper>
@@ -16,15 +20,15 @@ export default {
     return {
       columns: [
         {
-          title: '姓名',
+          label: '姓名',
           key: 'name'
         },
         {
-          title: '性别',
+          label: '性别',
           key: 'sex'
         },
         {
-          title: '学历',
+          label: '学历',
           key: 'record'
         }
       ],
@@ -37,7 +41,7 @@ export default {
         {
           name: 'Lucy',
           sex: '女',
-          record: '本科'
+          record: '本科',
         },
         {
           name: 'Jack',

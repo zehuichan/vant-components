@@ -43,18 +43,26 @@
 
         &__th {
           display: table-cell;
-          padding: @table-cols-padding;
+          padding: @table-cols-padding 0;
+
+          .cell {
+            padding: 0 @table-cols-padding;
+          }
         }
 
         &__td {
           display: table-cell;
-          padding: @table-cols-padding;
+          padding: @table-cols-padding 0;
 
           &__nodata {
             display: flex;
             height: 50px;
             align-items: center;
             justify-content: center;
+          }
+
+          .cell {
+            padding: 0 @table-cols-padding;
           }
         }
 
