@@ -1,13 +1,8 @@
 <template>
   <demo-wrapper title="Antv/F2 可视化">
     <demo-card>
-      <van-tabs v-model="active" type="card" style="width: 400px;" @click="onAction">
-        <van-tab title="日"/>
-        <van-tab title="月"/>
-        <van-tab title="年"/>
-      </van-tabs>
       <div style="padding: 8px 8px 0;">
-        <v-f2 :init="basic" :data="chartData"/>
+        <v-f2 ref="basic" :init="basic"/>
       </div>
     </demo-card>
     <demo-card>
@@ -33,47 +28,33 @@ export default {
   data() {
     return {
       active: 0,
-      chartData: []
+      chartData: [
+        { genre: 'Sports', sold: random(100, 500) },
+        { genre: 'Strategy', sold: random(100, 500) },
+        { genre: 'Action', sold: random(100, 500) },
+        { genre: 'Shooter', sold: random(100, 500) },
+        { genre: 'Other', sold: random(100, 500) },
+      ]
     }
   },
-  created() {
-    this.chartData = [
-      { genre: 'Sports', sold: 275 },
-      { genre: 'Strategy', sold: 115 },
-      { genre: 'Action', sold: 120 },
-      { genre: 'Shooter', sold: 350 },
-      { genre: 'Other', sold: 150 },
-    ]
+  mounted() {
+    setInterval(() => {
+      this.$refs.basic.changeData([
+        { genre: 'Sports', sold: random(100, 1000) },
+        { genre: 'Strategy', sold: random(200, 1000) },
+        { genre: 'Action', sold: random(400, 1000) },
+        { genre: 'Shooter', sold: random(300, 1000) },
+        { genre: 'Other', sold: random(300, 1000) },
+      ])
+    }, 1500)
   },
   methods: {
-    onAction(name, title) {
-      if (name === 0) {
-        this.chartData = [
-          { genre: 'Sports', sold: random(100, 200) },
-          { genre: 'Strategy', sold: random(100, 200) },
-          { genre: 'Action', sold: random(100, 200) },
-          { genre: 'Shooter', sold: random(100, 200) },
-          { genre: 'Other', sold: random(100, 200) },
-        ]
-      }
-      if (name === 1) {
-        this.chartData = [
-          { genre: 'Sports', sold: random(100, 200) },
-          { genre: 'Strategy', sold: random(100, 200) },
-          { genre: 'Action', sold: random(100, 200) },
-          { genre: 'Shooter', sold: random(100, 200) },
-          { genre: 'Other', sold: random(100, 200) },
-        ]
-      }
-      if (name === 2) {
-        this.chartData = []
-      }
-    },
     basic(F2, options) {
       const chart = new F2.Chart(options)
 
       chart.source(this.chartData)
       chart.interval().position('genre*sold').color('genre')
+      chart.line().position('genre*sold')
 
       chart.render()
 
