@@ -8,7 +8,7 @@
       </v-table>
     </demo-card>
     <demo-card title="无数据默认展示，支持自定义">
-      <v-table :columns="columns" :data="[]"/>
+      <v-table :columns="columns" :data="[]" />
       <v-table :columns="columns" :data="[]">
         <template #nodata>
           这里是自定义展示
@@ -16,7 +16,7 @@
       </v-table>
     </demo-card>
     <demo-card title="显示总结栏，支持自定义">
-      <v-table :columns="columns" :data="tabledata" show-summary summary="这是总结栏"/>
+      <v-table :columns="columns" :data="tabledata" show-summary summary="这是总结栏" />
       <br>
       <v-table :columns="columns" :data="tabledata" show-summary>
         <template #summary>
@@ -24,7 +24,7 @@
         </template>
       </v-table>
     </demo-card>
-    <README/>
+    <README />
   </demo-wrapper>
 </template>
 

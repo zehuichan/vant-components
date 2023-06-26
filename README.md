@@ -28,6 +28,18 @@ import VComponents from 'vantui-components'
 Vue.use(VComponents)
 ```
 
+### 按需引入
+
+```js
+import { VTable } from 'vantui-components'
+
+export default {
+    components: {
+        VTable
+    }
+}
+```
+
 
 ### 如何新建组件
 ```shell
