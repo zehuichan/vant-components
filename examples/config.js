@@ -14,6 +14,7 @@ module.exports = {
         { path: 'vspace', title: 'v-space', new: true },
         { path: 'vbacktop', title: 'v-backtop', new: true },
         { path: 'vtoolbar', title: 'v-tool-bar' },
+        /* PLOP_INJECT_EXPORT_业务组件 */
       ]
     },
     {
@@ -33,6 +34,7 @@ module.exports = {
         { path: 'vslider', title: 'v-slider' },
         { path: 'vradiobutton', title: 'v-radio-button' },
         { path: 'vform', title: 'v-form' },
+        /* PLOP_INJECT_EXPORT_表单组件 */
       ]
     },
     {
@@ -46,12 +48,14 @@ module.exports = {
         { path: 'vsvgicon', title: 'v-svg-icon' },
         { path: 'vqrcode', title: 'v-qrcode' },
         { path: 'vbarcode', title: 'v-barcode' },
+        /* PLOP_INJECT_EXPORT_展示组件 */
       ]
     },
     {
       title: 'Antv/F2',
       items: [
         { path: 'vf2', title: 'v-f2' },
+        /* PLOP_INJECT_EXPORT_F2 */
       ]
     },
     {
@@ -59,6 +63,7 @@ module.exports = {
       items: [
         { path: 'jweixin', title: 'jweixin', new: true },
         { path: 'auth', title: 'auth', new: true },
+        /* PLOP_INJECT_EXPORT_WeChat */
       ]
     }
   ]
