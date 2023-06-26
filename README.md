@@ -28,3 +28,13 @@ import VComponents from 'vantui-components'
 Vue.use(VComponents)
 ```
 
+
+### 如何新建组件
+```shell
+npm i -g plop
+plop / npm run new
+选择业务模块
+输入组件中文名称
+输入组件英文名称
+开始组件编写工作
+```
